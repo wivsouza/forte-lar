@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Forte Lar Construções - Construção, reformas e acabamentos."
+  >
+
+  <title>Forte Lar Construções</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #111111;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    /* AVISO DO PROJETO */
+
+    .demo {
+      background: #f28c00;
+      color: #111111;
+      text-align: center;
+      padding: 8px 15px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    /* MENU */
+
+    header {
+      background: #181818;
+      border-bottom: 1px solid #333;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: auto;
+      padding: 18px 20px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 900;
+      color: #ffffff;
+    }
+
+    .logo span {
+      color: #f28c00;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #f28c00;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 650px;
+
+      display: flex;
+      align-items: center;
+
+      background:
+        linear-gradient(
+          rgba(0,0,0,0.72),
+          rgba(0,0,0,0.82)
+        ),
+        url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80");
+
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-content {
+      max-width: 1100px;
+      width: 100%;
+      margin: auto;
+      padding: 50px 20px;
+    }
+
+    .hero h1 {
+      max-width: 700px;
+      font-size: clamp(42px, 7vw, 78px);
+      line-height: 1.05;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: #f28c00;
+    }
+
+    .hero p {
+      max-width: 600px;
+      font-size: 20px;
+      color: #dddddd;
+      margin-bottom: 35px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #f28c00;
+      color: #111111;
+      padding: 15px 25px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 900;
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+      background: #ffab2e;
+    }
+
+    /* SEÇÕES */
+
+    section {
+      padding: 80px 20px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #aaaaaa;
+    }
+
+    /* SERVIÇOS */
+
+    .services {
+      background: #181818;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: #222222;
+      padding: 30px;
+      border-radius: 10px;
+      border: 1px solid #333;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: #f28c00;
+    }
+
+    .card-icon {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 22px;
+    }
+
+    .card p {
+      color: #bbbbbb;
+    }
+
+    /* SOBRE */
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-image {
+      min-height: 400px;
+
+      background:
+        url("https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=900&q=80");
+
+      background-size: cover;
+      background-position: center;
+
+      border-radius: 12px;
+    }
+
+    .about-text h2 {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      color: #bbbbbb;
+      margin-bottom: 20px;
+    }
+
+    .check-list {
+      list-style: none;
+    }
+
+    .check-list li {
+      margin-bottom: 12px;
+      font-weight: bold;
+    }
+
+    .check-list li::before {
+      content: "✓";
+      color: #f28c00;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    /* PROJETOS */
+
+    .projects {
+      background: #181818;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .project {
+      height: 260px;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .project:nth-child(1) {
+      background-image:
+        url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80");
+    }
+
+    .project:nth-child(2) {
+      background-image:
+        url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=80");
+    }
+
+    .project:nth-child(3) {
+      background-image:
+        url("https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=80");
+    }
+
+    .project-info {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+
+      padding: 20px;
+
+      background: linear-gradient(
+        transparent,
+        rgba(0,0,0,0.9)
+      );
+    }
+
+    .project-info h3 {
+      font-size: 20px;
+    }
+
+    /* CONTATO */
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .contact p {
+      color: #bbbbbb;
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+
+    /* RODAPÉ */
+
+    footer {
+      background: #080808;
+      padding: 30px 20px;
+      text-align: center;
+      color: #777777;
+    }
+
+    footer strong {
+      color: #ffffff;
+    }
+
+    /* WHATSAPP */
+
+    .whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+
+      width: 60px;
+      height: 60px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: #25d366;
+      color: white;
+
+      border-radius: 50%;
+
+      font-size: 28px;
+      text-decoration: none;
+
+      box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+
+      z-index: 2000;
+    }
+
+    /* CELULAR */
+
+    @media (max-width: 800px) {
+
+      nav {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero {
+        min-height: 600px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-image {
+        min-height: 300px;
+      }
+
+      section {
+        padding: 60px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- AVISO -->
+
+  <div class="demo">
+    PROJETO DEMONSTRATIVO — PORTFÓLIO
+  </div>
+
+  <!-- MENU -->
+
+  <header>
+    <nav>
+
+      <div class="logo">
+        FORTE<span>LAR</span>
+      </div>
+
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+
+    </nav>
+  </header>
+
+  <!-- INÍCIO -->
+
+  <section class="hero" id="inicio">
+
+    <div class="hero-content">
+
+      <h1>
+        Seu projeto.<br>
+        Nossa <span>construção.</span>
+      </h1>
+
+      <p>
+        Construção, reformas e acabamentos
+        para transformar seus planos em realidade.
+      </p>
+
+      <a class="button" href="#contato">
+        SOLICITAR ORÇAMENTO
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- SERVIÇOS -->
+
+  <section class="services" id="servicos">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>Nossos Serviços</h2>
+
+        <p>
+          Soluções para construção, reforma e acabamento.
+        </p>
+
+      </div>
+
+      <div class="cards">
+
+        <div class="card">
+
+          <div class="card-icon">🏠</div>
+
+          <h3>Construção</h3>
+
+          <p>
+            Construção residencial e projetos
+            pensados para cada necessidade.
+          </p>
+
+        </div>
+
+        <div class="card">
+
+          <div class="card-icon">🔨</div>
+
+          <h3>Reformas</h3>
+
+          <p>
+            Reformas para transformar e
+            valorizar seu espaço.
+          </p>
+
+        </div>
+
+        <div class="card">
+
+          <div class="card-icon">🎨</div>
+
+          <h3>Acabamentos</h3>
+
+          <p>
+            Pintura, acabamento e detalhes
+            que fazem a diferença.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SOBRE -->
+
+  <section id="sobre">
+
+    <div class="container">
+
+      <div class="about">
+
+        <div class="about-image"></div>
+
+        <div class="about-text">
+
+          <h2>
+            Construindo com
+            <span style="color:#f28c00;">
+              qualidade
+            </span>
+          </h2>
+
+          <p>
+            A Forte Lar é um projeto demonstrativo
+            criado para apresentar como uma empresa
+            de construção civil pode ter uma presença
+            profissional na internet.
+          </p>
+
+          <p>
+            Aqui você pode apresentar seus serviços,
+            mostrar seus projetos e facilitar o contato
+            com novos clientes.
+          </p>
+
+          <ul class="check-list">
+
+            <li>Compromisso</li>
+            <li>Qualidade</li>
+            <li>Organização</li>
+            <li>Acabamento profissional</li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PROJETOS -->
+
+  <section class="projects" id="projetos">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>Projetos</h2>
+
+        <p>
+          Alguns exemplos de trabalhos apresentados.
+        </p>
+
+      </div>
+
+      <div class="project-grid">
+
+        <div class="project">
+
+          <div class="project-info">
+
+            <h3>Casa Residencial</h3>
+
+          </div>
+
+        </div>
+
+        <div class="project">
+
+          <div class="project-info">
+
+            <h3>Projeto Moderno</h3>
+
+          </div>
+
+        </div>
+
+        <div class="project">
+
+          <div class="project-info">
+
+            <h3>Reforma e Acabamento</h3>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTATO -->
+
+  <section class="contact" id="contato">
+
+    <div class="container">
+
+      <h2>
+        Vamos conversar?
+      </h2>
+
+      <p>
+        Tem um projeto de construção ou reforma?
+        Entre em contato para saber mais.
+      </p>
+
+      <!-- TROQUE O NÚMERO ABAIXO PELO WHATSAPP DO CLIENTE -->
+
+      <a
+        class="button"
+        href="https://wa.me/5500000000000"
+        target="_blank"
+      >
+        FALAR PELO WHATSAPP
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- RODAPÉ -->
+
+  <footer>
+
+    <p>
+      <strong>FORTELAR</strong> — Construção & Reformas
+    </p>
+
+    <p>
+      Projeto demonstrativo desenvolvido para portfólio.
+    </p>
+
+    <p>
+      © 2026 Forte Lar
+    </p>
+
+  </footer>
+
+  <!-- BOTÃO FLUTUANTE -->
+
+  <a
+    class="whatsapp"
+    href="https://wa.me/5500000000000"
+    target="_blank"
+    aria-label="WhatsApp"
+  >
+    ☎
+  </a>
+
+</body>
+</html>
